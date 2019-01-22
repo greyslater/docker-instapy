@@ -5,7 +5,7 @@ Run InstaPy on Docker with persistent DB and LOG folders
 
 ```
 docker create --name=instapy \
--v <path to data>:/persistent \
+-v <path to data>:InstaPy/persistent \
 -v /etc/localtime:/etc/localtime:ro \
 greyslater/instapy:latest
 ```
