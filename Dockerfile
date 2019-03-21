@@ -68,7 +68,7 @@ RUN git clone https://github.com/timgrossmann/InstaPy.git \
     -e "s/database_location.*/database_location = os.path.join(BASE_DIR, 'persistent', 'db', 'instapy.db')/" InstaPy/instapy/settings.py \
     && wget ${CRHOMEDRIVER} \
     && unzip chromedriver_linux64 \
-    && md InstaPy/assets/ \
+    && mkdir InstaPy/assets/ \
     && mv chromedriver InstaPy/assets/chromedriver \
     && chmod +x InstaPy/assets/chromedriver \
     && chmod 755 InstaPy/assets/chromedriver \
