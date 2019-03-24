@@ -63,11 +63,12 @@ RUN apt-get clean \
 	&& rm -rf /var/lib/apt/lists/*
 
 # Adding InstaPy
-RUN git clone https://github.com/greyslater/InstaPy.git \
+RUN git clone https://github.com/timgrossmann/InstaPy.git \
     && sed -i -e "s/log_location.*/log_location = os.path.join(BASE_DIR, 'persistent', 'logs')/" \
     -e "s/database_location.*/database_location = os.path.join(BASE_DIR, 'persistent', 'db', 'instapy.db')/" InstaPy/instapy/settings.py \
     && wget ${CRHOMEDRIVER} \
     && unzip chromedriver_linux64 \
+    && mkdir InstaPy/assets/ \
     && mv chromedriver InstaPy/assets/chromedriver \
     && chmod +x InstaPy/assets/chromedriver \
     && chmod 755 InstaPy/assets/chromedriver \
